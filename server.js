@@ -26,7 +26,7 @@ function getImagesFromDir(dirPath) {
         var stat = fs.statSync(fileLocation);
         if (stat && stat.isDirectory()) {
             getImagesFromDir(fileLocation); // process sub directories
-        } else if (stat && stat.isFile() && ['.jpg', '.png'].indexOf(path.extname(fileLocation)) != -1) {
+        } else if (stat && stat.isFile() && ['.jpg', '.png','.jpeg'].indexOf(path.extname(fileLocation)) != -1) {
             allImages.push('static/'+file); // push all .jpf and .png files to all images 
         }
     }
